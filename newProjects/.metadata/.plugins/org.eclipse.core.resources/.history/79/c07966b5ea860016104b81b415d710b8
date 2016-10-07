@@ -1,0 +1,5 @@
+package test.common.controller;
+
+public class UserController {
+
+}

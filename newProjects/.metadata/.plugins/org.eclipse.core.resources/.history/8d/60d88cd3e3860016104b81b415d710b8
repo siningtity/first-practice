@@ -1,0 +1,5 @@
+package test.common.service;
+
+public class UserService {
+
+}

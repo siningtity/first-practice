@@ -1,0 +1,37 @@
+package test.common;
+
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class CommonController {
+	
+	@Autowired
+	JdbcTemplate jdbcTemplate;
+	
+	@RequestMapping("/test1")
+	public String test(){
+		
+		
+		
+		return "hello???111";
+	}
+	
+	@RequestMapping("/selectTest")
+	public List selectTest(){
+		
+		List result = jdbcTemplate.queryForList("select * from user");
+		
+		
+		for(Object row : result){
+			System.out.println(((Map)row).get("user_id"));
+		}
+		
+		return result;
+	}
+}
